@@ -1,0 +1,20 @@
+{
+  "name": "hellojs-phonegap",
+  "version": "0.0.0",
+  "authors": [
+    "Andrew Dodson <andrew.j.dodson@gmail.com>"
+  ],
+  "description": "Build of Hello.js in PhoneGap",
+  "license": "MIT",
+  "homepage": "https://github.com/MrSwitch/hellojs-phonegap-demo/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hello": "feature-phonegap"
+  }
+}

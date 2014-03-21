@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+
+        <h1>HelloJS in PhoneGap</h1>
+        <button onclick="hello('google').login(loginHandler)">Google</button>
+        <button onclick="hello('facebook').login(loginHandler)">Facebook</button>
+        <button onclick="hello('windows').login(loginHandler)">Windows</button>
+
+        <script type="text/javascript" src="phonegap.js"></script>
+
+        <!--
+         Include the HelloJS library and modules you need
+        -->
+        <script type="text/javascript" src="components/hello/src/hello.js"></script>
+        <script type="text/javascript" src="components/hello/src/modules/google.js"></script>
+        <script type="text/javascript" src="components/hello/src/modules/facebook.js"></script>
+        <script type="text/javascript" src="components/hello/src/modules/windows.js"></script>
+        <script>
+
+            // Initate the library
+            hello.init({
+                google : '656984324806-sr0q9vq78tlna4hvhlmcgp2bs2ut8uj8.apps.googleusercontent.com',
+                facebook : '160981280706879',
+                windows : '00000000400D8578'
+            }, {
+                //
+                // Define the OAuth2 return URL
+                // This can be anything you like, providing its the callback which you have registered with the providers for OAuth2
+                // It could even be localhost, e.g. http://localhost/somepath as phonegap is not run from a domain so SameOrigin breaks, instead we take advantage of being able to read the popups URL in PhoneGap
+                redirect_uri : 'http://adodson.com/hello.js/redirect.html'
+            });
+
+            function loginHandler(r){
+                log(r);
+                hello(r.network).api('me').on('complete', log);
+            }
+
+            function log(r){
+                var s = document.createTextNode(JSON.stringify(r, null, "\t"));
+                var pre = document.getElementsByTagName('pre')[0];
+                pre.insertBefore(s, pre.firstChild);
+            }
+        </script>
+<pre>
+Demo HelloJS with PhoneGap
+Use the services above to signin and display basic account details here
+</pre>
+
+    </body>
+</html>

@@ -14,8 +14,8 @@ This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/
 ## Update an existing phonegap app
 HelloJS requires a phonegap app to meet the following conditions...
 
-* As above .... Download [HelloJS](https://github.com/MrSwitch/hello.js) into `www/path_to/hello.js/` folder.
-* Embed `<script src="path_to/hello.js/dist/hello.all.js">` tag, for a comprehensive implementation, else select from the `path_to/hello.js/src/` directory - example at [index.html](./index.html)
+* Include HelloJS into project, You can either use bower e.g. `bower install hello --save` or manually download [HelloJS](https://github.com/MrSwitch/hello.js) and include where you like e.g.  `path/to/myPhonegapApp/www/bower_components/hello.js/` folder.
+* Embed `<script src="./bower_components/hello.js/dist/hello.all.js">` tag in your HTML page
 * Provision `<access origin="*" />` in the phonegaps [config.xml](config.xml) file
 * Insure [InAppBrowser](http://cordova.apache.org/docs/en/3.1.0/cordova_inappbrowser_inappbrowser.md.html) plugin is available - I installed it using `phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git` - and include `<gap:plugin name="org.apache.cordova.inappbrowser" />` in  phonegap's [config.xml](config.xml) file if you haven't already.
 

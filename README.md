@@ -1,4 +1,5 @@
 # Hello.js and PhoneGap Demo
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/MrSwitch/hellojs-phonegap-demo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/) within a PhoneGap app.
 

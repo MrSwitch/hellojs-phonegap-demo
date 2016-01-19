@@ -3,6 +3,12 @@
 This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/) within a PhoneGap app.
 
 [Hello.js](https://github.com/MrSwitch/hello.js) is a library which lets clients connect with thirdparty API's within your app. Phonegap is synonymous with Cordova for the purpose of this demo.
+
+
+## Demo App
+
+[Android demo release .apk file](dist/android-release-signed.apk)
+
  
 ## Setup Cordova
 

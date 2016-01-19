@@ -23,12 +23,14 @@
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="bower_components/adorn/adorn.css" />
+        <meta name="manifest" content="./manifest.json" />
+        <script type="text/javascript" src="bower_components/adorn/adorn.js" async></script>
         <title>Hello World</title>
     </head>
     <body>
 
-        <h1>Hello.JS in PhoneGap</h1>
+        <h1>Demo: Hello.js in Cordova App</h1>
         <button onclick="login('google')">Google</button>
         <button onclick="login('facebook')">Facebook</button>
         <button onclick="login('windows')">Windows</button>
@@ -40,7 +42,7 @@
         <!--
          Include the HelloJS library and modules you need
         -->
-        <script type="text/javascript" src="components/hello/dist/hello.all.js"></script>
+        <script type="text/javascript" src="bower_components/hello/dist/hello.all.js"></script>
         <script>
 
             // Initate the library

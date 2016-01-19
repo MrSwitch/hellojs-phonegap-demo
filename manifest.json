@@ -1,0 +1,11 @@
+{
+	"name" : "Andrew Dodson's web portfolio",
+	"icons" : {
+		"64" : "./icon.png"
+	},
+	"root": "./",
+	"favicon" : "./icon.png",
+	"description" : "Andrew Dodson's portfolio",
+	"github" : "MrSwitch/hellojs-phonegap-demo",
+	"author" : "Andrew Dodson, https://adodson.com"
+}

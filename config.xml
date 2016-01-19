@@ -46,6 +46,8 @@
     <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
+    <preference name="android-minSdkVersion" value="14" />
+
     <!-- Plugins can also be added here. -->
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <!--
@@ -55,7 +57,7 @@
 
 
     <!-- Define app icon for each platform. -->
-    <icon src="icon.png" />
+    <icon src="./www/icon.png" />
 
 
     <!--

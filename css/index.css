@@ -45,3 +45,8 @@ body {
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
 }
+
+pre{
+    width:100%;
+    overflow:auto;
+}

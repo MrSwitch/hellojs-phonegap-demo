@@ -28,13 +28,13 @@
     </head>
     <body>
 
-        <h1>HelloJS in PhoneGap</h1>
-        <button onclick="hello('google').login(loginHandler)">Google</button>
-        <button onclick="hello('facebook').login(loginHandler)">Facebook</button>
-        <button onclick="hello('windows').login(loginHandler)">Windows</button>
+        <h1>Hello.JS in PhoneGap</h1>
+        <button onclick="login('google')">Google</button>
+        <button onclick="login('facebook')">Facebook</button>
+        <button onclick="login('windows')">Windows</button>
+        <button onclick="login('twitter')">Twitter</button>
 
         <!-- Older version called phonegap.js but newer called cordova.js -->
-        <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
 
         <!--
@@ -47,18 +47,25 @@
             hello.init({
                 google : '656984324806-sr0q9vq78tlna4hvhlmcgp2bs2ut8uj8.apps.googleusercontent.com',
                 facebook : '160981280706879',
-                windows : '00000000400D8578'
+                windows : '00000000400D8578',
+                twitter: 'eQuyZuECKWPiv3D7E4qdg'
             }, {
                 //
                 // Define the OAuth2 return URL
-                // This can be anything you like, providing its the callback which you have registered with the providers for OAuth2
+                // This can be anything you like, as long as its the callback associated with the your provider-app client id.
                 // It could even be localhost, e.g. http://localhost/somepath as phonegap is not run from a domain so SameOrigin breaks, instead we take advantage of being able to read the popups URL in PhoneGap
                 redirect_uri : 'http://adodson.com/hello.js/redirect.html'
             });
 
-            function loginHandler(r){
-                log(r);
-                hello(r.network).api('me').on('complete', log);
+            function login(network) {
+                var hi = hello(network);
+
+                hi.login()
+                .then(function(r) {
+                    log(r);
+                    return hi.api('me');
+                })
+                .then(log, log);
             }
 
             function log(r){

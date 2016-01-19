@@ -15,6 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "hello": ">=0.2.4"
+    "hello": ">=1"
   }
 }

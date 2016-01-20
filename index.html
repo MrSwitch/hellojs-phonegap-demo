@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -25,6 +7,7 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="bower_components/adorn/adorn.css" />
         <meta name="manifest" content="./manifest.json" />
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="bower_components/adorn/adorn.js" async></script>
         <title>Hello World</title>
     </head>
@@ -35,9 +18,12 @@
         <button onclick="login('facebook')">Facebook</button>
         <button onclick="login('windows')">Windows</button>
         <button onclick="login('twitter')">Twitter</button>
+        <button onclick="login('instagram')">Instagram</button>
 
-        <!-- Older version called phonegap.js but newer called cordova.js -->
-        <script type="text/javascript" src="cordova.js"></script>
+<pre>
+Demo HelloJS with PhoneGap
+Use the services above to signin and display basic account details here
+</pre>
 
         <!--
          Include the HelloJS library and modules you need
@@ -50,13 +36,14 @@
                 google : '656984324806-sr0q9vq78tlna4hvhlmcgp2bs2ut8uj8.apps.googleusercontent.com',
                 facebook : '160981280706879',
                 windows : '00000000400D8578',
-                twitter: 'eQuyZuECKWPiv3D7E4qdg'
+                twitter: 'eQuyZuECKWPiv3D7E4qdg',
+                instagram: 'e47d210f864c4b1ca94225ddab97205a'
             }, {
                 //
                 // Define the OAuth2 return URL
                 // This can be anything you like, as long as its the callback associated with the your provider-app client id.
                 // It could even be localhost, e.g. http://localhost/somepath as phonegap is not run from a domain so SameOrigin breaks, instead we take advantage of being able to read the popups URL in PhoneGap
-                redirect_uri : 'http://adodson.com/hello.js/redirect.html'
+                redirect_uri : 'https://adodson.com/hello.js/redirect.html'
             });
 
             function login(network) {
@@ -76,10 +63,7 @@
                 pre.insertBefore(s, pre.firstChild);
             }
         </script>
-<pre>
-Demo HelloJS with PhoneGap
-Use the services above to signin and display basic account details here
-</pre>
+
 
     </body>
 </html>

@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "hello": ">=1",
-    "adorn": "~1.0.1"
+    "adorn": "*"
   }
 }

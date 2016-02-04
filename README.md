@@ -16,7 +16,8 @@ See the guide for [setting up a new phonegap application](http://docs.phonegap.c
 
 	cordova create hello-cordova
 	cd hello-cordova
-	cordova platform android ios
+	cordova platform add ios
+	cordova platform add android
 	cordova plugin add cordova-plugin-inappbrowser
 	cordova plugin add cordova-plugin-whitelist
 

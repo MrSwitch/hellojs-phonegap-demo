@@ -10,11 +10,17 @@ This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/
 [Android demo release .apk file](dist/android-release-signed.apk)
 
  
-## Setup Cordova
+## Setup Demo
 
 See the guide for [setting up a new phonegap application](http://docs.phonegap.com/en/edge/guide_cli_index.md.html) 
 
-If you want to clone this demo into the `www/` directory, replacing its content. However i recommend just copying over the few files to your sample apps www/ directory.
+	cordova create hello-cordova
+	cd hello-cordova
+	cordova platform android ios
+	cordova plugin add cordova-plugin-inappbrowser
+	cordova plugin add cordova-plugin-whitelist
+
+	rm -rf ./config.xml www
 
 
 ## Cordova Dependencies
@@ -48,6 +54,7 @@ Insert into [config.xml](config.xml)
 
 See [index.html](index.html) as an example implmentation of HelloJS
 
+
 ## Bugs
 
-If you encounter any bugs please create a ticket at the [Hello.js repo](https://github.com/MrSwitch/hello.js/)
+If you encounter any bugs specifically with HelloJS, please create a ticket at the [Hello.js repo](https://github.com/MrSwitch/hello.js/)

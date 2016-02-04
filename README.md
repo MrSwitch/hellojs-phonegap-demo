@@ -21,6 +21,7 @@ See the guide for [setting up a new phonegap application](http://docs.phonegap.c
 	cordova plugin add cordova-plugin-whitelist
 
 	rm -rf ./config.xml www
+	git clone git@github.com:MrSwitch/hellojs-phonegap-demo.git www
 
 
 ## Cordova Dependencies

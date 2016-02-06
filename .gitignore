@@ -1,4 +1,6 @@
-bower_components/
+www/bower_components/
+platforms/
+plugins/
 
 #MacOSX
 .DS_store

@@ -14,15 +14,15 @@ This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/
 
 See the guide for [setting up a new phonegap application](http://docs.phonegap.com/en/edge/guide_cli_index.md.html) 
 
-	cordova create hello-cordova
-	cd hello-cordova
+	git clone git@github.com:MrSwitch/hellojs-phonegap-demo.git
+	cd ./hellojs-phonegap-demo
 	cordova platform add ios
 	cordova platform add android
 	cordova plugin add cordova-plugin-inappbrowser
 	cordova plugin add cordova-plugin-whitelist
 
-	rm -rf ./config.xml www
-	git clone git@github.com:MrSwitch/hellojs-phonegap-demo.git www
+	cd www
+	bower install
 
 
 ## Cordova Dependencies

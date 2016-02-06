@@ -1,8 +1,8 @@
-# Hello.js and Cordova/PhoneGap Demo
+# Hello.js and Cordova (Phonegap) Demo
 
-This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/) within a PhoneGap app.
+This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/) within a Cordova app.
 
-[Hello.js](https://github.com/MrSwitch/hello.js) is a library which lets clients connect with thirdparty API's within your app. Phonegap is synonymous with Cordova for the purpose of this demo.
+[Hello.js](https://github.com/MrSwitch/hello.js) is a clientside javascript library to interface with thirdparty API's.
 
 
 ## Demo App
@@ -12,7 +12,9 @@ This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/
  
 ## Setup Demo
 
-See the guide for [setting up a new phonegap application](http://docs.phonegap.com/en/edge/guide_cli_index.md.html) 
+It is assumed you are familiar with [cordova development](https://cordova.apache.org/).
+
+Here is the complete list to setup this demo.
 
 	git clone git@github.com:MrSwitch/hellojs-phonegap-demo.git
 	cd ./hellojs-phonegap-demo
@@ -24,38 +26,7 @@ See the guide for [setting up a new phonegap application](http://docs.phonegap.c
 	cd www
 	bower install
 
-
-## Cordova Dependencies
-
-### Whitelist:
-
-Install
-
-	cordova plugin add cordova-plugin-whitelist`
-
-Insert into [config.xml](config.xml)
-
-	<access origin="*" />
-
-
-### InAppBrowser: 
-
-Install
-
-	cordova plugin add cordova-plugin-inappbrowser
-
-Insert into [config.xml](config.xml)
-
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
-
-
-## Install HelloJS
-
-	cd www/
-	bower install hello --save
-
-See [index.html](index.html) as an example implmentation of HelloJS
-
+Now initiate with `cordova run ios`, or whatever platform you like.
 
 ## Bugs
 

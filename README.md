@@ -30,13 +30,16 @@ Next, simply add a platform and run e.g.
 	cordova platform add ios
 	cordova run ios
 
-# FAQ
+# FAQ's
 
 * What's the difference with a typical browser?
 
 HelloJS in Cordova works slight differently because apps run off the local filesystem, not a registered web domain. When registering a `redirect_uri` with an OAuth2 provider we can't simply register a anonymous path like ~~`file://local_assets/redirect.html`~~ - pertaining to the origin of a cordova app. However we can register a legitimate domain, like `https://adodson.com/hello.js/redirect.html` and put that in its stead. On a browser this would not work, because the same-origin rule prevents a file:// path and a http:// path from talking to oneanother (amongst other things).
 However we're talking about the special world of in-app-browsers - not a typical browser environment. The cordova plugin InAppBrowser provides an interface in which HelloJS can launch the device's browser and provide an API to monitor and augment that web window. So HelloJS running in the Cordova app triggers the user signin flow, and listens for the right URI (aka value of `redirect_uri`) and extracts the query parameters, tokens, state, etc...
 
+* Does the Redirect page need to include HelloJS script
+
+No, unlike the browser environment its not neccesary for the Redirect page to contain an instance of the HelloJS library. In fact it doesn't actually need to return content at all. However there is a delay between loading the page and notifying the inappbrowser of the page load, a desolate white screen will appear to the user if nothing else. So think about pointing to a simple splash screen.
 
 * What to whitelist
 

@@ -14,19 +14,37 @@ This is a demo implementation of [HelloJS](https://github.com/MrSwitch/hello.js/
 
 It is assumed you are familiar with [cordova development](https://cordova.apache.org/).
 
-Here is the complete list to setup this demo.
+Here is your instructions:
 
 	git clone git@github.com:MrSwitch/hellojs-phonegap-demo.git
 	cd ./hellojs-phonegap-demo
-	cordova platform add ios
-	cordova platform add android
 	cordova plugin add cordova-plugin-inappbrowser
 	cordova plugin add cordova-plugin-whitelist
 
 	cd www
 	bower install
 
-Now initiate with `cordova run ios`, or whatever platform you like.
+
+Next, simply add a platform and run e.g.
+
+	cordova platform add ios
+	cordova run ios
+
+# FAQ
+
+* What's the difference with a typical browser?
+
+HelloJS in Cordova works slight differently because apps run off the local filesystem, not a registered web domain. When registering a `redirect_uri` with an OAuth2 provider we can't simply register a anonymous path like ~~`file://local_assets/redirect.html`~~ - pertaining to the origin of a cordova app. However we can register a legitimate domain, like `https://adodson.com/hello.js/redirect.html` and put that in its stead. On a browser this would not work, because the same-origin rule prevents a file:// path and a http:// path from talking to oneanother (amongst other things).
+However we're talking about the special world of in-app-browsers - not a typical browser environment. The cordova plugin InAppBrowser provides an interface in which HelloJS can launch the device's browser and provide an API to monitor and augment that web window. So HelloJS running in the Cordova app triggers the user signin flow, and listens for the right URI (aka value of `redirect_uri`) and extracts the query parameters, tokens, state, etc...
+
+
+* What to whitelist
+
+Cordova has some other quirks like requiring the HTTP requests to be whitelisted first. I've whitelist'ed the lot in config.xml file.
+
+	<access origin="*" />
+	<allow-intent href="http://*/*" />
+	<allow-intent href="https://*/*" />
 
 ## Bugs
 
